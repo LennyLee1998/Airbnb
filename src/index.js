@@ -1,18 +1,24 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
+import { ThemeProvider } from "styled-components";
 
 import App from "./App";
 import "normalize.css";
 import "./assets/css/index.less";
 import store from "./stores";
+import { theme } from "./assets/theme";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <Provider store={store}>
+  <Provider store={store}>
+    <Suspense fallback="loading">
       <BrowserRouter>
-        <App />
+        <ThemeProvider theme={theme}>
+          <App />
+        </ThemeProvider>
       </BrowserRouter>
-    </Provider>
+    </Suspense>
+  </Provider>
 );

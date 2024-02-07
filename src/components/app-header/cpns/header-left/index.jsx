@@ -1,13 +1,18 @@
-import PropTypes from 'prop-types'
-import React, { memo } from 'react'
-import { LeftWrapper } from './style'
+import PropTypes from "prop-types";
+import React, { memo } from "react";
+import { LeftWrapper } from "./style";
+import IconLogo from "@/assets/svg/icon-logo";
 
 const HeaderLeft = memo((props) => {
   return (
-    <LeftWrapper>HeaderLeft</LeftWrapper>
-  )
-})
+    <LeftWrapper>
+      <div className="logo-icon">
+        <IconLogo />
+      </div>
+    </LeftWrapper>
+  );
+});
 
-HeaderLeft.propTypes = {}
+HeaderLeft.propTypes = {};
 
-export default HeaderLeft
+export default HeaderLeft;
