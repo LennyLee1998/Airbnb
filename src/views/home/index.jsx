@@ -2,6 +2,8 @@ import React, { memo, useEffect } from "react";
 import { shallowEqual, useSelector } from "react-redux";
 
 import request from "@/services";
+import { HomeWrapper } from "./style";
+import AppHeader from "@/components/app-header";
 
 const Home = memo(() => {
   const { count, name } = useSelector(
@@ -13,15 +15,14 @@ const Home = memo(() => {
   );
 
   useEffect(() => {
-    request.get({ url: "xxx" }).then((res) => {
+    request.get({ url: "/home/highscore" }).then((res) => {
       console.log(res);
     });
   }, []);
   return (
-    <div>
-      <span>{count}</span>
-      <span>{name}</span>
-    </div>
+    <HomeWrapper>
+      <AppHeader/>
+    </HomeWrapper>
   );
 });
 
