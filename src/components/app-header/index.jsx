@@ -8,9 +8,13 @@ import HeaderRight from "./cpns/header-right";
 const AppHeader = memo((props) => {
   return (
     <HeaderWrapper>
-      <HeaderLeft />
-      <HeaderCenter />
-      <HeaderRight />
+      <div className="header-icon">
+        <HeaderLeft />
+        <HeaderRight />
+      </div>
+      <div className="header-search">
+        <HeaderCenter />
+      </div>
     </HeaderWrapper>
   );
 });

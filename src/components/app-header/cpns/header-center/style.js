@@ -10,6 +10,8 @@ export const CenterWrapper = styled.div`
   border-radius: 24px;
   padding: 0 8px;
   cursor: pointer;
+  ${props => props.theme.mixin.boxShadow}
+
   .text {
     flex: 1;
     font-weight: 700;

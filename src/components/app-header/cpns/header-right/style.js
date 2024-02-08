@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const RightWrapper = styled.div`
   display: flex;
   align-items: center;
+  position: relative;
   .btns {
     display: flex;
     align-items: center;
@@ -10,12 +11,13 @@ export const RightWrapper = styled.div`
     .btn {
       box-sizing: border-box;
       padding: 12px 15px;
-      cursor: pointer;
-      /* background-color: #333; */
+      border-radius: 21px;
+      ${props => props.theme.mixin.boxBg}
+      /* cursor: pointer;
       &:hover {
         background-color: #f5f5f5;
         border-radius: 21px;
-      }
+      } */
     }
   }
   .infos {
@@ -28,8 +30,18 @@ export const RightWrapper = styled.div`
     box-sizing: border-box;
     border-radius: 21px;
 
+    ${(props) =>
+      props.theme.mixin.boxShadow}/* transition: box-shadow 0.2s ease-in;
     &:hover {
       box-shadow: 0 2px 4px rgba(0,0,0,.18);
-    }
+    } */
+  }
+
+  .panel {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    font-weight: 700;
+    color: #666;
   }
 `;
