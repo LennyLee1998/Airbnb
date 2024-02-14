@@ -1,27 +1,36 @@
 import React, { memo, useEffect } from "react";
-import { shallowEqual, useSelector } from "react-redux";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
 
-import request from "@/services";
 import { HomeWrapper } from "./style";
 import AppHeader from "@/components/app-header";
+import HomeBanner from "./cpns/home-banner";
+import { fetchHomeDataAction } from "@/stores/modules/home";
+import HomeSectionV1 from "./cpns/home-section-v1";
+
 
 const Home = memo(() => {
-  const { count, name } = useSelector(
+  const { goodPriceData, highScoreData } = useSelector(
     (state) => ({
-      count: state.home.count,
-      name: state.entire.name,
+      goodPriceData: state.home.goodPriceData,
+      highScoreData: state.home.highScoreData,
     }),
     shallowEqual
   );
 
+  const dispatch = useDispatch();
   useEffect(() => {
-    request.get({ url: "/home/highscore" }).then((res) => {
-      console.log(res);
-    });
-  }, []);
+    dispatch(fetchHomeDataAction());
+  }, [dispatch]);
   return (
     <HomeWrapper>
-      <AppHeader/>
+      <div className="app-header">
+        <AppHeader />
+      </div>
+      <HomeBanner />
+      <div className="content">
+        <HomeSectionV1 sectionData={highScoreData} />
+        <HomeSectionV1 sectionData={goodPriceData} />
+      </div>
     </HomeWrapper>
   );
 });
