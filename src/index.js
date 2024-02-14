@@ -2,7 +2,8 @@ import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import { ThemeProvider } from "styled-components";
+import isPropValid from "@emotion/is-prop-valid";
+import { StyleSheetManager, ThemeProvider } from "styled-components";
 
 import App from "./App";
 import "normalize.css";
@@ -15,9 +16,11 @@ root.render(
   <Provider store={store}>
     <Suspense fallback="loading">
       <BrowserRouter>
-        <ThemeProvider theme={theme}>
-          <App />
-        </ThemeProvider>
+        <StyleSheetManager shouldForwardProp={isPropValid}>
+          <ThemeProvider theme={theme}>
+            <App />
+          </ThemeProvider>
+        </StyleSheetManager>
       </BrowserRouter>
     </Suspense>
   </Provider>

@@ -11,3 +11,9 @@ export function getHighScoreData() {
     url: "/home/highscore",
   });
 }
+
+export function getDiscountData() {
+  return request.get({
+    url: "/home/discount",
+  });
+}

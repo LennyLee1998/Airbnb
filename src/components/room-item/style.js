@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ItemWrapper = styled.div`
-  width: 25%;
+  width: ${props => props.itemWidth} ;
   box-sizing: border-box;
   padding: 8px;
   .top {
@@ -33,8 +33,14 @@ export const ItemWrapper = styled.div`
       margin: 8px 0;
     }
     .review {
+      display: flex;
+      align-items: center;
       color: ${(props) => props.bottomStyle?.content_color};
       font-size: ${(props) => props.bottomStyle?.font_size};
+
+      .count {
+        margin: 0 2px 0 4px;
+      }
     }
   }
 `;

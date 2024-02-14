@@ -13,13 +13,13 @@ const HomeSectionV1 = memo((props) => {
         title={sectionData.title}
         subtitle={sectionData.subtitle}
       />
-      <SectionRooms listData={sectionData?.list?.slice(0, 8)} />
+      <SectionRooms listData={sectionData.list} />
     </SectionV1Wrapper>
   );
 });
 
 HomeSectionV1.propTypes = {
-  sectionData: PropTypes.object
+  sectionData: PropTypes.object,
 };
 
 export default HomeSectionV1;
