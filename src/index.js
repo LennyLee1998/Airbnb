@@ -14,14 +14,12 @@ import { theme } from "./assets/theme";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
-    <Suspense fallback="loading">
-      <BrowserRouter>
-        <StyleSheetManager shouldForwardProp={isPropValid}>
-          <ThemeProvider theme={theme}>
-            <App />
-          </ThemeProvider>
-        </StyleSheetManager>
-      </BrowserRouter>
-    </Suspense>
+    <BrowserRouter>
+      <StyleSheetManager shouldForwardProp={isPropValid}>
+        <ThemeProvider theme={theme}>
+          <App />
+        </ThemeProvider>
+      </StyleSheetManager>
+    </BrowserRouter>
   </Provider>
 );
