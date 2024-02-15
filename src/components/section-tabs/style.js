@@ -3,8 +3,10 @@ import styled from "styled-components";
 export const TabsWrapper = styled.div`
   display: flex;
   padding: 8px 0;
+  overflow: hidden;
   .tabs {
     flex-basis: 120px;
+    flex-shrink: 0;
     margin-right: 16px;
     padding: 14px 16px;
     border-radius: 3px;
@@ -12,6 +14,7 @@ export const TabsWrapper = styled.div`
     color: ${(props) => props.theme.textColor.primaryColor};
     text-align: center;
     font-size: 17px;
+    white-space: nowrap;
     border: 0.5px solid #d8d8d8;
     cursor: pointer;
     transition: box-shadow 300ms ease-in;

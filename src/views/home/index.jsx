@@ -10,14 +10,16 @@ import HomeSectionV2 from "./cpns/home-section-v2";
 import { isEmptyO } from "@/utils/is-empty-object";
 
 const Home = memo(() => {
-  const { goodPriceData, highScoreData, discountData } = useSelector(
-    (state) => ({
-      goodPriceData: state.home.goodPriceData,
-      highScoreData: state.home.highScoreData,
-      discountData: state.home.discountData,
-    }),
-    shallowEqual
-  );
+  const { goodPriceData, highScoreData, discountData, hotRecommendData } =
+    useSelector(
+      (state) => ({
+        goodPriceData: state.home.goodPriceData,
+        highScoreData: state.home.highScoreData,
+        discountData: state.home.discountData,
+        hotRecommendData: state.home.hotRecommendData,
+      }),
+      shallowEqual
+    );
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -32,6 +34,9 @@ const Home = memo(() => {
       <HomeBanner />
       <div className="content">
         {isEmptyO(discountData) && <HomeSectionV2 sectionData={discountData} />}
+        {isEmptyO(hotRecommendData) && (
+          <HomeSectionV2 sectionData={hotRecommendData} />
+        )}
         {isEmptyO(highScoreData) && (
           <HomeSectionV1 sectionData={highScoreData} />
         )}
