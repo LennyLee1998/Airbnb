@@ -13,11 +13,13 @@ const HomeLongfor = memo((props) => {
         title={sectionData.title}
         subtitle={sectionData.subtitle}
       />
-      <ScrollView>
+      <div className="longfor-list">
+        <ScrollView>
           {sectionData.list.map((item) => {
             return <LongforItem itemInfo={item} key={item.city} />;
           })}
-      </ScrollView>
+        </ScrollView>
+      </div>
     </LongforWrapper>
   );
 });

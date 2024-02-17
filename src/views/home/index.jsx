@@ -9,6 +9,7 @@ import HomeSectionV1 from "./cpns/home-section-v1";
 import HomeSectionV2 from "./cpns/home-section-v2";
 import { isEmptyO } from "@/utils/is-empty-object";
 import HomeLongfor from "./cpns/home-longfor";
+import HomeSectionV3 from "./cpns/home-section-v3";
 
 const Home = memo(() => {
   const {
@@ -17,6 +18,7 @@ const Home = memo(() => {
     discountData,
     hotRecommendData,
     longforData,
+    plusData,
   } = useSelector(
     (state) => ({
       goodPriceData: state.home.goodPriceData,
@@ -24,6 +26,7 @@ const Home = memo(() => {
       discountData: state.home.discountData,
       hotRecommendData: state.home.hotRecommendData,
       longforData: state.home.longforData,
+      plusData: state.home.plusData,
     }),
     shallowEqual
   );
@@ -44,13 +47,14 @@ const Home = memo(() => {
         {isEmptyO(hotRecommendData) && (
           <HomeSectionV2 sectionData={hotRecommendData} />
         )}
-        {isEmptyO(longforData) && <HomeLongfor sectionData={longforData}/>}
+        {isEmptyO(longforData) && <HomeLongfor sectionData={longforData} />}
         {isEmptyO(goodPriceData) && (
           <HomeSectionV1 sectionData={goodPriceData} />
         )}
         {isEmptyO(highScoreData) && (
           <HomeSectionV1 sectionData={highScoreData} />
         )}
+        {isEmptyO(plusData) && <HomeSectionV3 sectionData={plusData} />}
       </div>
     </HomeWrapper>
   );

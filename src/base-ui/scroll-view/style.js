@@ -9,13 +9,13 @@ export const ViewWrapper = styled.div`
     position: absolute;
     z-index: 99;
     top: 50%;
-
     display: flex;
     justify-content: center;
     align-items: center;
     width: 28px;
     height: 28px;
-    border-radius: 14px;
+    border-radius: 50%;
+    border: 2px solid #fff;
     /* background-color: red; */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
     cursor: pointer;
@@ -31,12 +31,12 @@ export const ViewWrapper = styled.div`
     }
   }
   .scroll-content {
-    position: relative;
-    z-index: 9;
+    /* position: relative;
+    z-index: 9; */
     display: flex;
-    padding: 8px 0;
-    margin: 0 -8px;
+    /* padding: 8px 0;
+    margin: 0 -8px; */
 
-    transition: transform 200ms ease;
+    transition: transform 250ms ease;
   }
 `;

@@ -12,7 +12,7 @@ export const FooterWrapper = styled.div`
       font-weight: 700;
     }
     &:hover {
-        text-decoration: underline;
-      }
+      text-decoration: underline;
+    }
   }
 `;

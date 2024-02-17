@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
 export const ItemWrapper = styled.div`
-  width: ${props => props.itemWidth} ;
+  width: ${(props) => props.itemWidth};
   box-sizing: border-box;
   padding: 8px;
+
+  flex-shrink: 0;
   .top {
     position: relative;
     padding: 66.66% 0 0;
@@ -36,7 +38,9 @@ export const ItemWrapper = styled.div`
       display: flex;
       align-items: center;
       color: ${(props) => props.bottomStyle?.content_color};
-      font-size: ${(props) => props.bottomStyle?.font_size};
+      /* font-size: ${(props) => props.bottomStyle?.font_size}; */
+      font-size: 12px;
+      font-weight: 700;
 
       .count {
         margin: 0 2px 0 4px;
