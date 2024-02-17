@@ -20,11 +20,10 @@ const ScrollView = memo((props) => {
   }, [props.children]);
 
   //
-  function btnClickHandle(isRight = true) {
+  function btnClickHandle(isRight) {
     const newIndex = isRight ? posIndex + 1 : posIndex - 1;
     const newEl = scrollContentRef.current.children[newIndex];
     const newOffsetLeft = newEl.offsetLeft;
-    console.log(newOffsetLeft);
     // 两个都为负数是因为translate的值是相对于元素原来的位置进行偏移的
     scrollContentRef.current.style.transform = `translateX(-${newOffsetLeft}px)`;
     setPosIndex(newIndex);
@@ -66,7 +65,12 @@ const ScrollView = memo((props) => {
           </div>
         )}
         {showRight && (
-          <div className="btn right" onClick={btnClickHandle}>
+          <div
+            className="btn right"
+            onClick={(e) => {
+              btnClickHandle(true);
+            }}
+          >
             <IconArrowRight />
           </div>
         )}

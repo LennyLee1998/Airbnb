@@ -35,6 +35,7 @@ export const ViewWrapper = styled.div`
     z-index: 9;
     display: flex;
     padding: 8px 0;
+    margin: 0 -8px;
 
     transition: transform 200ms ease;
   }
