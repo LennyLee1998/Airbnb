@@ -3,6 +3,7 @@ import { useRoutes } from "react-router-dom";
 import { Suspense } from "react";
 
 import routes from "./router";
+import AppFooter from "./components/app-footer";
 
 const App = memo(() => {
   return (
@@ -10,7 +11,7 @@ const App = memo(() => {
       <Suspense fallback="loading">
         <div className="page">{useRoutes(routes)}</div>
       </Suspense>
-      <div className="footer"></div>
+      <AppFooter />
     </div>
   );
 });
