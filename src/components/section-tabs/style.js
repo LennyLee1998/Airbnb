@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const TabsWrapper = styled.div`
-  /* display: flex;
+  /* display: flex; */
   padding: 8px 0;
-  overflow: hidden; */
+  /* overflow: hidden; */
   .tabs {
     flex-basis: 120px;
     flex-shrink: 0;
