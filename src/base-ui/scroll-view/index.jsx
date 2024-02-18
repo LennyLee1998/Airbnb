@@ -11,6 +11,7 @@ const ScrollView = memo((props) => {
   const totalDistanceRef = useRef();
 
   const scrollContentRef = useRef();
+  // console.log(props.children);
   useEffect(() => {
     const scrollWidth = scrollContentRef.current.scrollWidth; //整个的宽度
     const clientWidth = scrollContentRef.current.clientWidth; //overflow下的宽度

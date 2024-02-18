@@ -3,9 +3,9 @@ import styled from "styled-components";
 export const EntireWrapper = styled.div`
   .header {
   }
-  /* .filter {
-    position: relative;
+  .filter {
+    /* position: relative; */
     height: 48px;
-    padding-left: 16px;
-  } */
+    /* padding-left: 16px; */
+  }
 `;

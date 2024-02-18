@@ -6,6 +6,7 @@ export const HeaderWrapper = styled.div`
   box-sizing: border-box;
   padding: 0 24px;
   border-bottom: 1px solid #ddd;
+  background-color: #fff;
   .header-icon {
     display: flex;
     justify-content: space-between;
