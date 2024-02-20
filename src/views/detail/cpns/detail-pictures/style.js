@@ -38,7 +38,7 @@ export const PicturesWrapper = styled.div`
         right: 0;
         bottom: 0;
         top: 0;
-        background-color: rgba(0,0,0,.3);
+        background-color: rgba(0, 0, 0, 0.3);
         opacity: 0;
         transition: opacity 200ms ease;
       }
@@ -60,5 +60,14 @@ export const PicturesWrapper = styled.div`
       border: 1px solid #000;
     }
   }
-
+  .showBtn {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    line-height: 22px;
+    padding: 6px 15px;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 4px;
+  }
 `;

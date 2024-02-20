@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
+import localCache from "@/utils/cache";
 
 const detailSlice = createSlice({
   name: "detail",
   initialState: {
-    detailInfo: {},
+    detailInfo: localCache.getCache("item-data") ?? {},
   },
   reducers: {
     changeDetailInfoAction(state, { payload }) {

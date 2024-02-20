@@ -12,6 +12,7 @@ const RoomItem = memo((props) => {
   const { itemData, itemWidth = "25%", itemClick } = props;
   const [selectIndex, setSelectIndex] = useState(0);
   const bannerRef = useRef();
+
   function controlClickHandle(isRight = true, event) {
     isRight ? bannerRef.current.next() : bannerRef.current.prev();
     let newIndex = isRight ? selectIndex + 1 : selectIndex - 1;
@@ -19,9 +20,12 @@ const RoomItem = memo((props) => {
     if (newIndex < 0) newIndex = length - 1;
     if (newIndex > length - 1) newIndex = 0;
     setSelectIndex(newIndex);
+
+    // 阻止事件冒泡
+    event.stopPropagation();
   }
   function itemClickHandle() {
-    if (itemClick) itemClick(itemData)
+    if (itemClick) itemClick(itemData);
   }
 
   const pictureEl = (
