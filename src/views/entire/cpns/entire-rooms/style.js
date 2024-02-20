@@ -3,15 +3,21 @@ import styled from "styled-components";
 export const RoomsWrapper = styled.div`
   position: relative;
   padding: 30px 20px;
+  /* margin-top: 128px; */
+
   .title {
-    margin: 0 0 10px 10px;
+    font-size: 22px;
+    font-weight: 700;
     color: #222;
+    margin: 0 0 10px 10px;
   }
+
   .list {
     display: flex;
     flex-wrap: wrap;
   }
-  .cover {
+
+  > .cover {
     position: absolute;
     left: 0;
     right: 0;

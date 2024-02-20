@@ -1,7 +1,15 @@
 import React, { memo } from "react";
+import { DetailWrapper } from "./style";
+import AppHeader from "@/components/app-header";
+import DetailPictures from "./cpns/detail-pictures";
 
 const Detail = memo(() => {
-  return <div>Detail</div>;
+  return (
+    <DetailWrapper>
+      <AppHeader />
+      <DetailPictures />
+    </DetailWrapper>
+  );
 });
 
 export default Detail;
