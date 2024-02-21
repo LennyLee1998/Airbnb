@@ -15,7 +15,7 @@ const Entire = memo(() => {
   return (
     <EntireWrapper>
       <div className="header">
-        <AppHeader />
+        <AppHeader isFixed={true} />
       </div>
       <div className="filter">
         <EntireFilter />

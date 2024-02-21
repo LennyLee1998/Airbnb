@@ -6,7 +6,7 @@ import DetailPictures from "./cpns/detail-pictures";
 const Detail = memo(() => {
   return (
     <DetailWrapper>
-      <AppHeader />
+      <AppHeader isFixed={false} />
       <DetailPictures />
     </DetailWrapper>
   );

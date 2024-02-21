@@ -39,7 +39,7 @@ const Home = memo(() => {
   return (
     <HomeWrapper>
       <div className="app-header">
-        <AppHeader />
+        <AppHeader isFixed={true}/>
       </div>
       <HomeBanner />
       <div className="content">
