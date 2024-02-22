@@ -26,6 +26,7 @@ export const ItemWrapper = styled.div`
   }
   .slider {
     position: relative;
+    z-index: 9;
     cursor: pointer;
     &:hover {
       .control {
@@ -34,7 +35,7 @@ export const ItemWrapper = styled.div`
     }
     .control {
       position: absolute;
-      z-index: 99;
+      z-index: 9;
       top: 0;
       left: 0;
       right: 0;

@@ -10,6 +10,7 @@ import HomeSectionV2 from "./cpns/home-section-v2";
 import { isEmptyO } from "@/utils/is-empty-object";
 import HomeLongfor from "./cpns/home-longfor";
 import HomeSectionV3 from "./cpns/home-section-v3";
+import { changeHeaderConfigAction } from "@/stores/modules/main";
 
 const Home = memo(() => {
   const {
@@ -34,12 +35,13 @@ const Home = memo(() => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchHomeDataAction());
+    dispatch(changeHeaderConfigAction({ topAlpha: true }));
   }, [dispatch]);
 
   return (
     <HomeWrapper>
       <div className="app-header">
-        <AppHeader isFixed={true}/>
+        <AppHeader isFixed={true} />
       </div>
       <HomeBanner />
       <div className="content">

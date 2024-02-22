@@ -8,12 +8,12 @@ export const RightWrapper = styled.div`
     display: flex;
     align-items: center;
     font-weight: 700;
+    color: ${(props) => (props.theme.isAlpha ? "#fff" : "")};
     .btn {
       box-sizing: border-box;
       padding: 12px 15px;
       border-radius: 21px;
-      ${props => props.theme.mixin.boxBg}
-      /* cursor: pointer;
+      ${(props) => props.theme.mixin.boxBg}/* cursor: pointer;
       &:hover {
         background-color: #f5f5f5;
         border-radius: 21px;
@@ -29,6 +29,7 @@ export const RightWrapper = styled.div`
     border: 1px solid #ddd;
     box-sizing: border-box;
     border-radius: 21px;
+    background-color: #fff;
 
     ${(props) =>
       props.theme.mixin.boxShadow}/* transition: box-shadow 0.2s ease-in;

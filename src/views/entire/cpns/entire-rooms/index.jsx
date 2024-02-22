@@ -33,7 +33,7 @@ const EntireRooms = memo(() => {
     <RoomsWrapper>
       <h2 className="title">{totalCount}多处住所</h2>
       <div className="list">
-        {roomList.map((item) => {
+        {roomList?.map((item) => {
           return (
             <RoomItem
               itemData={item}

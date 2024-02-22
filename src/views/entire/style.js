@@ -5,8 +5,6 @@ export const EntireWrapper = styled.div`
     height: 80px;
   }
   .filter {
-    position: relative;
     height: 48px;
-    padding-left: 16px;
   }
 `;
