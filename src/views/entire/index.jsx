@@ -6,11 +6,12 @@ import EntireRooms from "./cpns/entire-rooms";
 import EntirePagination from "./cpns/entire-pagination";
 import { useDispatch } from "react-redux";
 import { fetchTotalRoomListAction } from "@/stores/modules/entire/actionCreator";
-
+import { changeHeaderConfigAction } from "@/stores/modules/main";
 const Entire = memo(() => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchTotalRoomListAction());
+    dispatch(changeHeaderConfigAction({ topAlpha: false }));
   }, [dispatch]);
   return (
     <EntireWrapper>

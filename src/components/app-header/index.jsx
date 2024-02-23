@@ -27,7 +27,6 @@ const AppHeader = memo((props) => {
   if (isSearch && Math.abs(scrollY - preY.current) > 30) setIsSearch(false);
 
   const isAlpha = topAlpha && scrollY === 0;
-  // if (isAlpha) setIsSearch(true);
   return (
     <ThemeProvider theme={{ isAlpha }}>
       <HeaderWrapper
