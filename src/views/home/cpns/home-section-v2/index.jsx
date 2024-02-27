@@ -11,7 +11,10 @@ const HomeSectionV2 = memo((props) => {
   const { sectionData } = props;
   const tabNames = sectionData?.dest_address?.map((item) => item.name);
   // debugger
-  const [name, setName] = useState(tabNames[0] ?? "");
+  const initialName = tabNames && tabNames.length > 0 ? tabNames[0] : "";
+  const [name, setName] = useState(initialName);
+
+  // const [name, setName] = useState(tabNames[0] ?? "");
   const nameClickHandle = useCallback((tabName) => {
     setName(tabName);
   }, []);
@@ -27,7 +30,7 @@ const HomeSectionV2 = memo((props) => {
         listData={sectionData?.dest_list?.[name]}
         itemWidth="33.33%"
       />
-      <SectionFooter name={name}/>
+      <SectionFooter name={name} />
     </SectionV2Wrapper>
   );
 });

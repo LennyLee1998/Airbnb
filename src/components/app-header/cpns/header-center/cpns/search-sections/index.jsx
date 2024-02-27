@@ -4,7 +4,6 @@ import { SectionsWrapper } from "./style";
 
 const SearchSections = memo((props) => {
   const { itemData } = props;
-  console.log(itemData);
   return (
     <SectionsWrapper>
       <div className="search-section">
